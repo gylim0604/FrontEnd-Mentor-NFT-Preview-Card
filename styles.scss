@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+$bg-main: hsl(217, 54%, 11%);
+$bg-card: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$font-size: 18px;
+$light: 300;
+$normal: 400;
+$bold: 600;
+
+html,
+body {
+    color: $soft-blue;
+    background: $bg-main;
+    font-family: 'Outfit', sans-serif;
+    font-size: $font-size;
+}
+
+.wrapper {
+    margin: 5em auto;
+    width: 90vw;
+    max-width: 400px;
+    padding: 2em;
+    background: $bg-card;
+    border-radius: 10px;
+}
+
+.image {
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    &::after {
+        position: absolute;
+        content: '';
+        inset: 0;
+        background: url('./images/icon-view.svg') center no-repeat,
+            rgba(0, 255, 247, 0.5);
+        display: none;
+    }
+    &:hover::after {
+        cursor: pointer;
+        display: initial;
+    }
+    img {
+        background-size: auto 100%;
+    }
+}
+
+.title {
+    color: $white;
+    margin: 1em 0;
+    font-weight: $bold;
+    &:hover {
+        color: $cyan;
+        cursor: pointer;
+    }
+}
+.description {
+    font-weight: $light;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    span {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+    }
+    .price {
+        color: $cyan;
+    }
+}
+.author {
+    padding: 1em 0;
+    border-top: $line 1px solid;
+    display: flex;
+    align-items: center;
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        margin-right: 1em;
+    }
+    p {
+        font-weight: $light;
+    }
+    .name {
+        color: $white;
+        &:hover {
+            color: $cyan;
+            cursor: pointer;
+        }
+    }
+}
